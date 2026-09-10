@@ -26,29 +26,32 @@ python manage.py collectstatic --noinput
 if [ "${DJANGO_CREATE_SUPERUSER:-false}" = "true" ]; then
   echo "Checking superuser..."
 
-  python manage.py shell << END
-from django.contrib.auth import get_user_model
+  python manage.py shell <<'PY'
 import os
+
+from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-username = os.getenv("DJANGO_SUPERUSER_USERNAME")
 email = os.getenv("DJANGO_SUPERUSER_EMAIL")
 password = os.getenv("DJANGO_SUPERUSER_PASSWORD")
 
-if username and password:
-    if not User.objects.filter(username=username).exists():
+if email and password:
+    existing_user = User.objects.filter(
+        email__iexact=email,
+    ).first()
+
+    if existing_user:
+        print("Superuser already exists")
+    else:
         User.objects.create_superuser(
-            username=username,
             email=email,
             password=password,
         )
         print("Superuser created")
-    else:
-        print("Superuser already exists")
 else:
     print("Superuser credentials not configured")
-END
+PY
 fi
 
 # Execute container command

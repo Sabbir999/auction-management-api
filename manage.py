@@ -3,11 +3,15 @@
 import os
 import sys
 
+
 def main():
     if "test" in sys.argv:
-        os.environ.setdefault(
-        'DJANGO_SETTINGS_MODULE', 'config.settings.test'
-        )
+        settings_module = "config.settings.test"
+    else:
+        settings_module = "config.settings.local"
+
+    os.environ.setdefault( "DJANGO_SETTINGS_MODULE", settings_module)
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -16,8 +20,9 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

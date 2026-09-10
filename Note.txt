@@ -1,0 +1,53 @@
+Authentication operations
+─────────────────────────
+Sign up             → Firebase
+Login               → Firebase
+Logout              → Firebase
+Forgot password     → Firebase
+Reset password      → Firebase
+Change password     → Firebase
+Email verification  → Firebase
+Token refresh       → Firebase
+Google/Apple login  → Firebase
+
+
+Sign up
+   ↓
+Normal authenticated user
+   ↓
+Read everything
+   ↓
+No write permissions
+
+Need player management?
+   ↓
+Request Player Manager
+   ↓
+Admin approves
+   ↓
+Player Manager group assigned
+   ↓
+Can add/edit/deactivate players
+
+Need auction management?
+   ↓
+Request Auction Manager
+   ↓
+Same system
+
+Team owner?
+   ↓
+Admin assigns specific TeamMembership
+   ↓
+Can bid only for that team
+
+
+| Role              | Scope                | Assigned by              |
+| ----------------- | -------------------- | ------------------------ |
+| Normal User       | Whole app, read-only | Automatic on signup      |
+| Player Manager    | Global               | Admin / approved request |
+| Auction Manager   | Global               | Admin / approved request |
+| Application Admin | Global               | Admin                    |
+| Team Owner        | Specific team        | Admin                    |
+| Team Manager      | Specific team        | Admin                    |
+| Django Admin      | Internal admin site  | `is_staff` separately    |

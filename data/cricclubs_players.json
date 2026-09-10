@@ -1,0 +1,54 @@
+[
+  {
+    "playerName": "Arif Islam",
+    "ccPlayerId": "517091",
+    "profileKey": "sdM6hSsj0imEhYdzKrtWzg",
+    "profileUrl": "https://cricclubs.com/BangladeshCricketAssociationofMichigan/user/sdM6hSsj0imEhYdzKrtWzg?playerName=Arif+Islam",
+    "currentTeam": "Detroit Strikers",
+    "playingRole": "Batter",
+    "battingStyle": "Right Handed Batter",
+    "bowlingStyle": "-",
+    "jerseyNumber": "0",
+    "careerStats": {
+      "matches": 308,
+      "runs": 7957,
+      "wickets": 320
+    },
+    "seriesStats": [
+      {
+        "seriesType": "Twenty20",
+        "matches": 35,
+        "innings": 32,
+        "runs": 725,
+        "battingAverage": 27.88,
+        "strikeRate": 110.02,
+        "highestScore": "75",
+        "hundreds": 0,
+        "fifties": 3,
+        "bowlingInnings": 33,
+        "wickets": 35,
+        "bowlingAverage": 22.54,
+        "economyRate": 7.48,
+        "catches": 6,
+        "stumpings": 1
+      },
+      {
+        "seriesType": "100b",
+        "matches": 7,
+        "innings": 6,
+        "runs": 107,
+        "battingAverage": 21.4,
+        "strikeRate": 125.88,
+        "highestScore": "30",
+        "hundreds": 0,
+        "fifties": 0,
+        "bowlingInnings": 4,
+        "wickets": 3,
+        "bowlingAverage": 27,
+        "economyRate": 7.48,
+        "catches": 1,
+        "stumpings": 0
+      }
+    ]
+  }
+]
